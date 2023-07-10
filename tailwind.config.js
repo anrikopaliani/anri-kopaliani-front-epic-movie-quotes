@@ -16,6 +16,9 @@ module.exports = {
         theme: "#11101A",
         red: "#E31221",
       },
+      colors: {
+        DCA: "#DCA",
+      },
     },
   },
   plugins: [],
