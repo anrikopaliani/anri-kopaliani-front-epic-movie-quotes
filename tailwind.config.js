@@ -19,6 +19,9 @@ module.exports = {
       colors: {
         DCA: "#DCA",
       },
+      borderRadius: {
+        4.8: "0.3rem",
+      },
     },
   },
   plugins: [],
