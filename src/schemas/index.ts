@@ -1,0 +1,1 @@
+export { signUpFormValidation } from "./forms";
