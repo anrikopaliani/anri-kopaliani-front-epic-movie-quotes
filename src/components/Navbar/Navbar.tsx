@@ -1,11 +1,16 @@
 "use client";
 import { Button } from "@/components";
-import { useNavbar } from "@/hooks";
+import { useAppSelector, useNavbar } from "@/hooks";
 
 const Navbar = () => {
   const { handleLoginModal, handleSignUpModal } = useNavbar();
+  const { signUpModal, loginModal } = useAppSelector((state) => state.modal);
   return (
-    <nav className="px-16 bg-theme text-white flex items-center justify-between pt-6">
+    <nav
+      className={`px-16 bg-theme text-white flex items-center justify-between pt-6 ${
+        signUpModal || loginModal ? "blur" : ""
+      }`}
+    >
       <p className="text-DCA">MOVIE QUOTES</p>
       <div className="space-x-4">
         <Button
