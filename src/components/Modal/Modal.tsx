@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { ModalProps } from "./types";
 
-const Modal: FC<ModalProps> = ({ children, isOpen, toggle }) => {
+const Modal: FC<ModalProps> = ({ children, isOpen, toggle, width, height }) => {
   return (
     <>
       {isOpen && (
@@ -11,7 +11,8 @@ const Modal: FC<ModalProps> = ({ children, isOpen, toggle }) => {
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="block z-40 bg-theme w-601 h-1/2"
+            style={{ width, height }}
+            className=" z-40 bg-modalTheme rounded-xl flex flex-col justify-center items-center"
           >
             {children}
           </div>
