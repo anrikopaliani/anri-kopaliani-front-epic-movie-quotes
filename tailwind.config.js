@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       spacing: {
         601: "37.563rem",
+        360: "22.5rem",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -18,9 +19,12 @@ module.exports = {
       backgroundColor: {
         theme: "#11101A",
         red: "#E31221",
+        modalTheme: "#222030",
+        input: "#CED4DA",
       },
       colors: {
         DCA: "#DCA",
+        subtitle: "#6C757D",
       },
       borderRadius: {
         4.8: "0.3rem",
