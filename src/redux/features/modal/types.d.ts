@@ -1,4 +1,4 @@
 export type modalStateTypes = {
-  SignUpModal: boolean;
-  LoginModal: boolean;
+  signUpModal: boolean;
+  loginModal: boolean;
 };

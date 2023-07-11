@@ -2,24 +2,22 @@ import { createSlice } from "@reduxjs/toolkit";
 import { modalStateTypes } from "./types";
 
 const initialState: modalStateTypes = {
-  SignUpModal: false,
-  LoginModal: false,
+  signUpModal: false,
+  loginModal: false,
 };
 
 export const modalSlice = createSlice({
   name: "modal",
   initialState,
   reducers: {
-    showSignUpModal: (state) => {
-      state.SignUpModal = true;
-      state.LoginModal = false;
+    toggleSignUpModal: (state) => {
+      state.signUpModal = !state.signUpModal;
     },
-    showLoginModal: (state) => {
-      state.SignUpModal = false;
-      state.LoginModal = true;
+    toggleLoginModal: (state) => {
+      state.loginModal = !state.loginModal;
     },
   },
 });
 
-export const { showLoginModal, showSignUpModal } = modalSlice.actions;
+export const { toggleSignUpModal, toggleLoginModal } = modalSlice.actions;
 export default modalSlice.reducer;
