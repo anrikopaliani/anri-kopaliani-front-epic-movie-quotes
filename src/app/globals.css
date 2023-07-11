@@ -5,3 +5,10 @@
 input::placeholder {
   color: #6c757d;
 }
+
+input:focus {
+  outline: none;
+  border: 1px solid #ced4da;
+
+  box-shadow: 0px 0px 0px 4px rgba(13, 110, 253, 0.25);
+}
