@@ -20,4 +20,4 @@ export const modalSlice = createSlice({
 });
 
 export const { toggleSignUpModal, toggleLoginModal } = modalSlice.actions;
-export default modalSlice.reducer;
+export const modalReducer = modalSlice.reducer;
