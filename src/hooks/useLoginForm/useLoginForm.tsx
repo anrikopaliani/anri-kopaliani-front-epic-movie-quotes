@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { loginFormValidation } from "@/schemas";
-import { submitDataTypes } from "./types";
+import { UserInput } from "./types";
 
 const useLoginForm = () => {
-  const form = useForm({
+  const form = useForm<UserInput>({
     mode: "all",
     resolver: yupResolver(loginFormValidation),
     defaultValues: {
@@ -18,7 +18,7 @@ const useLoginForm = () => {
     formState: { errors },
   } = form;
 
-  const onSubmit = (data: submitDataTypes) => {
+  const onSubmit = (data: UserInput) => {
     console.log(data);
   };
 

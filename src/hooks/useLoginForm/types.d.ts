@@ -1,4 +1,4 @@
-export type submitDataTypes = {
+export type UserInput = {
   user: string;
   password: string;
 };
