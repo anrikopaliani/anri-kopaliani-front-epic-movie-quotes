@@ -1,7 +1,6 @@
 "use client";
-import { Modal, SignUpForm, LandingPage } from "@/components";
-import { SignUpModal } from "@/components";
-import { LoginModal } from "@/components/Modals/LoginModal";
+import { LandingPage, LoginModal, SignUpModal } from "@/components";
+
 import { useLandingPage } from "@/hooks";
 
 export default function Home() {
