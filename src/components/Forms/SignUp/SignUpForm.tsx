@@ -1,4 +1,4 @@
-import { Input, Google } from "@/components";
+import { Input, GoogleIcon } from "@/components";
 
 const SignUpForm = () => {
   return (
@@ -31,7 +31,7 @@ const SignUpForm = () => {
         type="button"
         className="w-full border border-white rounded mt-4 h-9 flex items-center justify-center"
       >
-        <Google /> <span className="pl-2">Sign up with Google</span>
+        <GoogleIcon /> <span className="pl-2">Sign up with Google</span>
       </button>
       <p className="w-full mt-8 text-center">Already have an account? Log in</p>
     </form>
