@@ -1,10 +1,11 @@
 "use client";
-import { Modal, SignUpForm, LandingPage } from "@/components";
-import { SignUpModal } from "@/components";
+import { LandingPage, LoginModal, SignUpModal } from "@/components";
+
 import { useLandingPage } from "@/hooks";
 
 export default function Home() {
-  const { signUpModal, signUpModalToggle, loginModal } = useLandingPage();
+  const { signUpModal, signUpModalToggle, loginModal, loginModalToggle } =
+    useLandingPage();
   return (
     <>
       <LandingPage />
@@ -12,6 +13,7 @@ export default function Home() {
         signUpModal={signUpModal}
         signUpModalToggle={signUpModalToggle}
       />
+      <LoginModal loginModal={loginModal} loginModalToggle={loginModalToggle} />
     </>
   );
 }

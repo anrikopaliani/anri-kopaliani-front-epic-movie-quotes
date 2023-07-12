@@ -1,38 +1,35 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { signUpFormValidation } from "@/schemas";
+import { loginFormValidation } from "@/schemas";
 import { UserInput } from "./types";
 import { useAppDispatch } from "@/hooks";
-import { toggleLoginModal } from "@/redux/features";
+import { toggleSignUpModal } from "@/redux/features";
 
-const useSignUpForm = () => {
+const useLoginForm = () => {
   const dispatch = useAppDispatch();
-
   const form = useForm<UserInput>({
     mode: "all",
-    resolver: yupResolver(signUpFormValidation),
+    resolver: yupResolver(loginFormValidation),
     defaultValues: {
-      name: "",
-      email: "",
+      user: "",
       password: "",
-      confirm_password: "",
     },
   });
-
-  const showLoginModal = () => {
-    dispatch(toggleLoginModal());
-  };
 
   const {
     handleSubmit,
     formState: { errors },
   } = form;
 
+  const showSignUpModal = () => {
+    dispatch(toggleSignUpModal());
+  };
+
   const onSubmit = (data: UserInput) => {
     console.log(data);
   };
 
-  return { form, handleSubmit, errors, onSubmit, showLoginModal };
+  return { form, handleSubmit, errors, onSubmit, showSignUpModal };
 };
 
-export default useSignUpForm;
+export default useLoginForm;

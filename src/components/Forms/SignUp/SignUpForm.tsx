@@ -3,7 +3,8 @@ import { Input, GoogleIcon } from "@/components";
 import { useSignUpForm } from "@/hooks";
 
 const SignUpForm = () => {
-  const { form, handleSubmit, onSubmit, errors } = useSignUpForm();
+  const { form, handleSubmit, onSubmit, errors, showLoginModal } =
+    useSignUpForm();
   return (
     <FormProvider {...form}>
       <form className="text-white w-360" onSubmit={handleSubmit(onSubmit)}>
@@ -35,7 +36,7 @@ const SignUpForm = () => {
         />
         <button
           type="submit"
-          className="mt-4 h-9 rounded bg-red w-full text-center"
+          className="mt-9 h-9 rounded bg-red w-full text-center"
         >
           Get Started
         </button>
@@ -46,7 +47,13 @@ const SignUpForm = () => {
           <GoogleIcon /> <span className="pl-2">Sign up with Google</span>
         </button>
         <p className="w-full mt-8 text-center">
-          Already have an account? Log in
+          Already have an account?{" "}
+          <span
+            className="underline text-link hover:cursor-pointer"
+            onClick={showLoginModal}
+          >
+            Log in
+          </span>
         </p>
       </form>
     </FormProvider>
