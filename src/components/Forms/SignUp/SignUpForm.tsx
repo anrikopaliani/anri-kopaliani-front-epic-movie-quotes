@@ -1,6 +1,4 @@
-import { Input } from "@/components";
-import { Google } from "@/components";
-import React from "react";
+import { Input, Google } from "@/components";
 
 const SignUpForm = () => {
   return (
