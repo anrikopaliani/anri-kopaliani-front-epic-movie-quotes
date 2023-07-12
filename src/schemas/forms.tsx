@@ -19,7 +19,7 @@ export const signUpFormValidation = Yup.object({
     .oneOf([Yup.ref("password")], "Your passwords do not match."),
 });
 
-export const loginFormValidtion = Yup.object({
+export const loginFormValidation = Yup.object({
   user: Yup.string()
     .required("email or username is required")
     .min(3, "should be at least 3 characters long"),
