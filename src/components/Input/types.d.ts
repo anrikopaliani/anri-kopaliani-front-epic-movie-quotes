@@ -3,4 +3,5 @@ export type InputProps = {
   label: string;
   placeholder: string;
   name: string;
+  error: string | undefined;
 };
