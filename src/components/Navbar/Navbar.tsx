@@ -1,10 +1,10 @@
 "use client";
 import { Button } from "@/components";
-import { useAppSelector, useNavbar } from "@/hooks";
+import { useNavbar } from "@/hooks";
 
 const Navbar = () => {
-  const { handleLoginModal, handleSignUpModal } = useNavbar();
-  const { signUpModal, loginModal } = useAppSelector((state) => state.modal);
+  const { handleLoginModal, handleSignUpModal, loginModal, signUpModal } =
+    useNavbar();
   return (
     <nav
       className={`px-16 bg-theme text-white flex items-center justify-between pt-6 ${

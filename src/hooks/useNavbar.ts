@@ -1,4 +1,4 @@
-import { useAppDispatch } from "@/hooks";
+import { useAppDispatch, useAppSelector } from "@/hooks";
 import {
   toggleSignUpModal,
   toggleLoginModal,
@@ -6,6 +6,7 @@ import {
 
 const useNavbar = () => {
   const dispatch = useAppDispatch();
+  const { signUpModal, loginModal } = useAppSelector((state) => state.modal);
 
   const handleLoginModal = () => {
     dispatch(toggleLoginModal());
@@ -15,7 +16,7 @@ const useNavbar = () => {
     dispatch(toggleSignUpModal());
   };
 
-  return { handleLoginModal, handleSignUpModal };
+  return { handleLoginModal, handleSignUpModal, signUpModal, loginModal };
 };
 
 export default useNavbar;
