@@ -1,4 +1,4 @@
-export type modalStateTypes = {
+export type ModalStateTypes = {
   signUpModal: boolean;
   loginModal: boolean;
 };

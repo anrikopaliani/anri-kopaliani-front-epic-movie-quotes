@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { modalStateTypes } from "./types";
+import { ModalStateTypes } from "./types";
 
-const initialState: modalStateTypes = {
+const initialState: ModalStateTypes = {
   signUpModal: false,
   loginModal: false,
 };
