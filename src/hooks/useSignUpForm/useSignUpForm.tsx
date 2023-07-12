@@ -2,8 +2,12 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { signUpFormValidation } from "@/schemas";
 import { UserInput } from "./types";
+import { useAppDispatch } from "@/hooks";
+import { toggleLoginModal } from "@/redux/features";
 
 const useSignUpForm = () => {
+  const dispatch = useAppDispatch();
+
   const form = useForm<UserInput>({
     mode: "all",
     resolver: yupResolver(signUpFormValidation),
@@ -15,6 +19,10 @@ const useSignUpForm = () => {
     },
   });
 
+  const showLoginModal = () => {
+    dispatch(toggleLoginModal());
+  };
+
   const {
     handleSubmit,
     formState: { errors },
@@ -24,7 +32,7 @@ const useSignUpForm = () => {
     console.log(data);
   };
 
-  return { form, handleSubmit, errors, onSubmit };
+  return { form, handleSubmit, errors, onSubmit, showLoginModal };
 };
 
 export default useSignUpForm;

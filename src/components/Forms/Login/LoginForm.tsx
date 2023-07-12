@@ -3,7 +3,8 @@ import { GoogleIcon, Input } from "@/components";
 import { useLoginForm } from "@/hooks";
 
 const LoginForm = () => {
-  const { form, errors, onSubmit, handleSubmit } = useLoginForm();
+  const { form, errors, onSubmit, handleSubmit, showSignUpModal } =
+    useLoginForm();
   return (
     <FormProvider {...form}>
       <form onSubmit={handleSubmit(onSubmit)} className="w-360 text-white">
@@ -32,6 +33,15 @@ const LoginForm = () => {
         >
           <GoogleIcon /> <span className="pl-2">Sign up with Google</span>
         </button>
+        <p className="w-full text-center mt-8">
+          Do not have an account?
+          <span
+            onClick={showSignUpModal}
+            className="text-link underline hover:cursor-pointer pl-1"
+          >
+            Sign up
+          </span>
+        </p>
       </form>
     </FormProvider>
   );

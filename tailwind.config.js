@@ -26,6 +26,7 @@ module.exports = {
         DCA: "#DCA",
         subtitle: "#6C757D",
         error: "#DC3545",
+        link: "#0D6EFD",
       },
       borderRadius: {
         4.8: "0.3rem",

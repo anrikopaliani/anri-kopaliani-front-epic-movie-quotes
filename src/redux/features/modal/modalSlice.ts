@@ -12,9 +12,11 @@ export const modalSlice = createSlice({
   reducers: {
     toggleSignUpModal: (state) => {
       state.signUpModal = !state.signUpModal;
+      state.loginModal = false;
     },
     toggleLoginModal: (state) => {
       state.loginModal = !state.loginModal;
+      state.signUpModal = false;
     },
   },
 });
