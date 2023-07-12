@@ -25,6 +25,7 @@ module.exports = {
       colors: {
         DCA: "#DCA",
         subtitle: "#6C757D",
+        error: "#DC3545",
       },
       borderRadius: {
         4.8: "0.3rem",

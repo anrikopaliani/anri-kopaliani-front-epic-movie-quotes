@@ -35,7 +35,7 @@ const SignUpForm = () => {
         />
         <button
           type="submit"
-          className="mt-4 h-9 rounded bg-red w-full text-center"
+          className="mt-9 h-9 rounded bg-red w-full text-center"
         >
           Get Started
         </button>
