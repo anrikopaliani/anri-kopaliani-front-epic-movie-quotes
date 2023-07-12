@@ -9,11 +9,14 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       onClick={handleClick}
-      className={
-        backgroundColor === "transparent"
-          ? "w-28 h-10 border border-white rounded"
-          : "w-28 h-10 border-none bg-red rounded"
-      }
+      className={`
+      w-28 h-10
+        ${
+          backgroundColor === "transparent"
+            ? " border border-white rounded"
+            : "w-28 h-10 border-none bg-red rounded"
+        }
+      `}
     >
       {text}
     </button>
