@@ -6,7 +6,8 @@ import {
 
 const useNavbar = () => {
   const dispatch = useAppDispatch();
-  const { signUpModal, loginModal } = useAppSelector((state) => state.modal);
+  const { signUpModal, loginModal, activatedModal, confirmationSentModal } =
+    useAppSelector((state) => state.modal);
 
   const handleLoginModal = () => {
     dispatch(toggleLoginModal());
@@ -15,8 +16,16 @@ const useNavbar = () => {
   const handleSignUpModal = () => {
     dispatch(toggleSignUpModal());
   };
+  const blurModalBackground =
+    loginModal || signUpModal || confirmationSentModal || activatedModal;
 
-  return { handleLoginModal, handleSignUpModal, signUpModal, loginModal };
+  return {
+    handleLoginModal,
+    handleSignUpModal,
+    signUpModal,
+    loginModal,
+    blurModalBackground,
+  };
 };
 
 export default useNavbar;

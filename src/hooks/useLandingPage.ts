@@ -7,9 +7,8 @@ import {
 
 const useLandingPage = () => {
   const dispatch = useAppDispatch();
-  const { loginModal, signUpModal, confirmationSentModal } = useAppSelector(
-    (state) => state.modal
-  );
+  const { loginModal, signUpModal, confirmationSentModal, activatedModal } =
+    useAppSelector((state) => state.modal);
 
   const signUpModalToggle = () => {
     dispatch(toggleSignUpModal());
@@ -24,7 +23,7 @@ const useLandingPage = () => {
   };
 
   const blurModalBackground =
-    loginModal || signUpModal || confirmationSentModal;
+    loginModal || signUpModal || confirmationSentModal || activatedModal;
 
   return {
     loginModal,
