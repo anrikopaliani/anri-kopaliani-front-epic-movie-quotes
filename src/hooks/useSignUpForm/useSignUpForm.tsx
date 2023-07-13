@@ -35,8 +35,10 @@ const useSignUpForm = () => {
   const onSubmit = async (data: UserInput) => {
     console.log(data);
     await csrfToken();
-    axios.post("/register", data);
-    dispatch(toggleConfirmationSentModal());
+    const response = await axios.post("/register", data);
+    if (response.status === 200) {
+      dispatch(toggleConfirmationSentModal());
+    }
   };
 
   return { form, handleSubmit, errors, onSubmit, showLoginModal };
