@@ -27,7 +27,7 @@ const ConfirmationSentModal: FC<ConfirmationSentModalProps> = ({
       </div>
       <a
         href="https://mail.google.com"
-        className="text-center hover:cursor-pointer rounded-sm mt-10 text-white w-360 h-9 bg-red"
+        className=" flex items-center justify-center hover:cursor-pointer rounded-sm mt-10 text-white w-360 h-9 bg-red"
       >
         Go to my mail
       </a>
