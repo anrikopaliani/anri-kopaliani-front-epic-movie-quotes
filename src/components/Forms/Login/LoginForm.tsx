@@ -21,12 +21,25 @@ const LoginForm = () => {
           placeholder="Password"
           error={errors.password?.message}
         />
+
+        <div className="flex justify-between items-center mt-5 mb-4">
+          <div className="flex items-center space-x-1">
+            <input type="checkbox" name="remember_me" id="remember_me" />
+            <label htmlFor="remember_me">Remember me</label>
+          </div>
+
+          <span className="text-link underline hover:cursor-pointer pl-1">
+            Forgot password
+          </span>
+        </div>
+
         <button
           type="submit"
-          className="mt-9 h-9 rounded bg-red w-full  text-center"
+          className=" h-9 rounded bg-red w-full  text-center"
         >
           Sign in
         </button>
+
         <button
           type="button"
           className="w-full  border border-white rounded mt-4 h-9 flex items-center justify-center"
