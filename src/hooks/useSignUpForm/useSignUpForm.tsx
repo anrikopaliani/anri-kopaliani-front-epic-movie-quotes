@@ -3,7 +3,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { signUpFormValidation } from "@/schemas";
 import { UserInput } from "./types";
 import { useAppDispatch } from "@/hooks";
-import { toggleLoginModal } from "@/redux/features";
+import {
+  toggleLoginModal,
+  toggleConfirmationSentModal,
+} from "@/redux/features";
+import axios, { csrfToken } from "@/services/axios";
 
 const useSignUpForm = () => {
   const dispatch = useAppDispatch();
@@ -28,8 +32,11 @@ const useSignUpForm = () => {
     formState: { errors },
   } = form;
 
-  const onSubmit = (data: UserInput) => {
+  const onSubmit = async (data: UserInput) => {
     console.log(data);
+    await csrfToken();
+    axios.post("/register", data);
+    dispatch(toggleConfirmationSentModal());
   };
 
   return { form, handleSubmit, errors, onSubmit, showLoginModal };
