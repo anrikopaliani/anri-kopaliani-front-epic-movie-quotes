@@ -1,8 +1,10 @@
 "use client";
 import { LandingPage, LoginModal, SignUpModal } from "@/components";
 import { ConfirmationSentModal } from "@/components/Modals";
-
+import { QueryClient, QueryClientProvider } from "react-query";
 import { useLandingPage } from "@/hooks";
+
+const queryClient = new QueryClient();
 
 export default function Home() {
   const {
@@ -14,7 +16,7 @@ export default function Home() {
     confirmationSentModal,
   } = useLandingPage();
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <LandingPage />
       <SignUpModal
         signUpModal={signUpModal}
@@ -25,6 +27,6 @@ export default function Home() {
         confirmationSentModal={confirmationSentModal}
         VerificationSentToggle={VerificationSentToggle}
       />
-    </>
+    </QueryClientProvider>
   );
 }

@@ -1,3 +1,4 @@
+import axios from "@/services/axios";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { signUpFormValidation } from "@/schemas";
@@ -7,10 +8,16 @@ import {
   toggleLoginModal,
   toggleConfirmationSentModal,
 } from "@/redux/features";
-import axios, { csrfToken } from "@/services/axios";
+import { useMutation } from "react-query";
+import { registerUser } from "@/services";
 
 const useSignUpForm = () => {
   const dispatch = useAppDispatch();
+  const { mutate: registerUserMutate } = useMutation(registerUser, {
+    onSuccess: () => {
+      dispatch(toggleConfirmationSentModal());
+    },
+  });
 
   const form = useForm<UserInput>({
     mode: "all",
@@ -33,12 +40,7 @@ const useSignUpForm = () => {
   } = form;
 
   const onSubmit = async (data: UserInput) => {
-    console.log(data);
-    await csrfToken();
-    const response = await axios.post("/register", data);
-    if (response.status === 200) {
-      dispatch(toggleConfirmationSentModal());
-    }
+    registerUserMutate(data);
   };
 
   return { form, handleSubmit, errors, onSubmit, showLoginModal };
