@@ -1,9 +1,9 @@
 import React from "react";
 import { Navbar } from "@/components";
-import { useAppSelector } from "@/hooks";
+import { useLandingPage } from "@/hooks";
 
 const LandingPage = () => {
-  const { signUpModal, loginModal } = useAppSelector((state) => state.modal);
+  const { blurModalBackground } = useLandingPage();
   return (
     <>
       <div className="w-screen  h-screen  bg-theme overflow-hidden">
@@ -11,7 +11,7 @@ const LandingPage = () => {
 
         <div
           className={`w-screen h-screen flex flex-col items-center justify-center text-center ${
-            signUpModal || loginModal ? "blur" : ""
+            blurModalBackground ? "blur" : ""
           } `}
         >
           <h1 className="text-DCA text-6xl">

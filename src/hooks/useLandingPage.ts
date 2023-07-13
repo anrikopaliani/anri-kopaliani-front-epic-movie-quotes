@@ -23,6 +23,9 @@ const useLandingPage = () => {
     dispatch(toggleConfirmationSentModal());
   };
 
+  const blurModalBackground =
+    loginModal || signUpModal || confirmationSentModal;
+
   return {
     loginModal,
     signUpModal,
@@ -30,6 +33,7 @@ const useLandingPage = () => {
     loginModalToggle,
     confirmationSentModal,
     VerificationSentToggle,
+    blurModalBackground,
   };
 };
 
