@@ -14,7 +14,7 @@ export const signUpFormValidation = Yup.object({
     .min(8, "password should be at least 8 characters long")
     .max(15, "password shouldn't be more than 15 characters long")
     .lowercase("should be lowercase "),
-  confirm_password: Yup.string()
+  password_confirmation: Yup.string()
     .required("Please retype your password.")
     .oneOf([Yup.ref("password")], "Your passwords do not match."),
 });

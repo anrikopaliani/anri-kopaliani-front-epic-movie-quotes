@@ -15,7 +15,7 @@ const useSignUpForm = () => {
       name: "",
       email: "",
       password: "",
-      confirm_password: "",
+      password_confirmation: "",
     },
   });
 

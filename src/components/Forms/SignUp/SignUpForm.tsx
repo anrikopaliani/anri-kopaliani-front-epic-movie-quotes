@@ -30,9 +30,9 @@ const SignUpForm = () => {
         <Input
           type="password"
           label="Confirm password"
-          name="confirm_password"
+          name="password_confirmation"
           placeholder="Confirm password"
-          error={errors.confirm_password?.message}
+          error={errors.password_confirmation?.message}
         />
         <button
           type="submit"
