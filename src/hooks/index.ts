@@ -4,3 +4,4 @@ export { default as useNavbar } from "./useNavbar";
 export { default as useLandingPage } from "./useLandingPage";
 export * from "./useSignUpForm";
 export * from "./useLoginForm";
+export * from "./useVerifyEmail";
