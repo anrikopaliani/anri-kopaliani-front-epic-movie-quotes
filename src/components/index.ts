@@ -6,3 +6,4 @@ export { Input } from "./Input";
 export * from "./icons";
 export * from "./LandingPage";
 export * from "./Layouts";
+export * from "./Verify";

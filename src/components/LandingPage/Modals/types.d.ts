@@ -12,7 +12,3 @@ export type ConfirmationSentModalProps = {
   confirmationSentModal: boolean;
   VerificationSentToggle: () => void;
 };
-
-export type EmailActivatedModalProps = {
-  activatedModal: boolean;
-};
