@@ -1,15 +1,20 @@
-import { LandingPage } from "@/components";
+import { LandingPage, LandingPageLayout } from "@/components";
 import EmailActivatedModal from "@/components/Modals/ActivatedModal/EmailActivatedModal";
 import { useVerifyEmail } from "@/hooks";
+import { ReactElement } from "react";
+import { NextPageWithLayout } from "../types";
 
-const EmailVerifiedPage = () => {
+const EmailVerifiedPage: NextPageWithLayout = () => {
   const { activatedModal } = useVerifyEmail();
   return (
     <>
-      <LandingPage />
       <EmailActivatedModal activatedModal={activatedModal} />
     </>
   );
+};
+
+EmailVerifiedPage.getLayout = function getLayout(page: ReactElement) {
+  return <LandingPageLayout>{page}</LandingPageLayout>;
 };
 
 export default EmailVerifiedPage;

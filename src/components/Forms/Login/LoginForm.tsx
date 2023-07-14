@@ -1,5 +1,5 @@
 import { FormProvider } from "react-hook-form";
-import { GoogleIcon, Input } from "@/components";
+import { Checkbox, GoogleIcon, Input } from "@/components";
 import { useLoginForm } from "@/hooks";
 
 const LoginForm = () => {
@@ -23,11 +23,7 @@ const LoginForm = () => {
         />
 
         <div className="flex justify-between items-center mt-5 mb-4">
-          <div className="flex items-center space-x-1">
-            <input type="checkbox" name="remember_me" id="remember_me" />
-            <label htmlFor="remember_me">Remember me</label>
-          </div>
-
+          <Checkbox label="Remember me" name="remember_me" />
           <span className="text-link underline hover:cursor-pointer pl-1">
             Forgot password
           </span>

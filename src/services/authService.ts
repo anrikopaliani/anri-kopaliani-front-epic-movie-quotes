@@ -11,7 +11,6 @@ export const registerUser = async (data: RegisterDataTypes) => {
 };
 
 export const loginUser = async (data: LoginDataTypes) => {
-  axios.get("/sanctum/csrf-cookie").then((response) => {
-    axios.post("/login", data).then((response) => console.log(response));
-  });
+  await csrfToken();
+  return await axios.post("/login", data);
 };

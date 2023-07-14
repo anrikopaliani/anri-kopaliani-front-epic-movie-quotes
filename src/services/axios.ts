@@ -10,7 +10,7 @@ const axios = Axios.create({
 });
 
 export const csrfToken = async () => {
-  await axios.get("http://localhost:8000/sanctum/csrf-cookie");
+  await Axios.get("http://localhost:8000/sanctum/csrf-cookie");
   return true;
 };
 

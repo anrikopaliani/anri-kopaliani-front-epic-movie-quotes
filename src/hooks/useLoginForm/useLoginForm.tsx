@@ -18,6 +18,7 @@ const useLoginForm = () => {
     defaultValues: {
       user: "",
       password: "",
+      remember_me: false,
     },
   });
 

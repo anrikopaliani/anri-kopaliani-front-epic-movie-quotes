@@ -24,4 +24,5 @@ export const loginFormValidation = Yup.object({
     .required("email or username is required")
     .min(3, "should be at least 3 characters long"),
   password: Yup.string().required(),
+  remember_me: Yup.boolean().required(),
 });
