@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Modal } from "@/components/Modal";
 import { ConfirmationSentModalProps } from "./types";
-import { SendCheck } from "@/components";
+import { SendCheckIcon } from "@/components";
 import Link from "next/link";
 
 const ConfirmationSentModal: FC<ConfirmationSentModalProps> = ({
@@ -16,7 +16,7 @@ const ConfirmationSentModal: FC<ConfirmationSentModalProps> = ({
       toggle={VerificationSentToggle}
     >
       <div className="mb-3">
-        <SendCheck />
+        <SendCheckIcon />
       </div>
       <div className="text-white w-360 text-center">
         <p className="text-3xl">Thank you!</p>

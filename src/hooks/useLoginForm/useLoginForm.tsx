@@ -4,9 +4,14 @@ import { loginFormValidation } from "@/schemas";
 import { UserInput } from "./types";
 import { useAppDispatch } from "@/hooks";
 import { toggleSignUpModal } from "@/redux/features";
+import { useMutation } from "react-query";
+import { loginUser } from "@/services";
 
 const useLoginForm = () => {
   const dispatch = useAppDispatch();
+  const { mutate: loginUserMutate } = useMutation(loginUser, {
+    onSuccess: () => console.log("hello wolrd"),
+  });
   const form = useForm<UserInput>({
     mode: "all",
     resolver: yupResolver(loginFormValidation),
@@ -26,7 +31,7 @@ const useLoginForm = () => {
   };
 
   const onSubmit = (data: UserInput) => {
-    console.log(data);
+    loginUserMutate(data);
   };
 
   return { form, handleSubmit, errors, onSubmit, showSignUpModal };
