@@ -1,4 +1,3 @@
-"use client";
 import { LandingPage, LoginModal, SignUpModal } from "@/components";
 import { ConfirmationSentModal } from "@/components/Modals";
 import { QueryClient, QueryClientProvider } from "react-query";
