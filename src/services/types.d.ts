@@ -10,3 +10,7 @@ export type LoginDataTypes = {
   password: string;
   remember_me?: boolean;
 };
+
+export type ForgotPasswordType = {
+  email: string;
+};

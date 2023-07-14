@@ -1,4 +1,4 @@
-import axios, { csrfToken } from "./axios";
+import axios from "./axios";
 import { LoginDataTypes, RegisterDataTypes } from "./types";
 
 export const verifyUserEmail = (url: string) => {
@@ -6,11 +6,11 @@ export const verifyUserEmail = (url: string) => {
 };
 
 export const registerUser = async (data: RegisterDataTypes) => {
-  await csrfToken();
-  return await axios.post("/register", data);
+  return await axios.post("/api/register", data);
 };
 
-export const loginUser = async (data: LoginDataTypes) => {
-  await csrfToken();
-  return await axios.post("/login", data);
+export const loginUser = (data: LoginDataTypes) => {
+  return axios.get("/sanctum/csrf-cookie").then((response) => {
+    axios.post("/api/login", data);
+  });
 };

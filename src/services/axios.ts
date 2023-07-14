@@ -1,17 +1,13 @@
-import Axios from "axios";
+import axios from "axios";
 
-const axios = Axios.create({
-  baseURL: "http://localhost:8000/api",
+const api = axios.create({
+  baseURL: "http://localhost:8000",
   withCredentials: true,
   headers: {
+    "X-Requested-With": "XMLHttpRequest",
     "Content-Type": "application/json",
     Accept: "application/json",
   },
 });
 
-export const csrfToken = async () => {
-  await Axios.get("http://localhost:8000/sanctum/csrf-cookie");
-  return true;
-};
-
-export default axios;
+export default api;
