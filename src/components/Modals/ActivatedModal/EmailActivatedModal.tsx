@@ -1,7 +1,6 @@
-import { Modal } from "@/components";
 import { FC } from "react";
+import { Modal, TaskCompleteIcon } from "@/components";
 import { EmailActivatedModalProps } from "./types";
-import { TaskCompleteIcon } from "@/components";
 
 const EmailActivatedModal: FC<EmailActivatedModalProps> = ({
   activatedModal,
