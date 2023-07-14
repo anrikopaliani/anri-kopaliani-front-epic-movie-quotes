@@ -1,5 +1,5 @@
 import { Button } from "@/components";
-import { useNavbar } from "@/hooks";
+import useNavbar from "./useNavbar";
 
 const Navbar = () => {
   const { handleLoginModal, handleSignUpModal } = useNavbar();
