@@ -7,3 +7,4 @@ export { LandingPage } from "./LandingPage";
 export * from "./icons";
 export * from "./Modals";
 export * from "./Forms";
+export * from "./Layouts";
