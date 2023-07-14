@@ -1,6 +1,6 @@
 import { FormProvider } from "react-hook-form";
 import { GoogleIcon, Input } from "@/components";
-import { useLoginForm } from "@/hooks";
+import useLoginForm from "./useLoginForm";
 import Checkbox from "./Checkbox";
 
 const LoginForm = () => {

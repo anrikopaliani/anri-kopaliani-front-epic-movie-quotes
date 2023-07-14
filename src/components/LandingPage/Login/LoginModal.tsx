@@ -1,6 +1,8 @@
-import { LoginForm, Modal } from "@/components";
 import { FC } from "react";
+import { Modal } from "@/components";
 import { LoginModalProps } from "./types";
+import LoginForm from "./LoginForm";
+
 const LoginModal: FC<LoginModalProps> = ({ loginModal, loginModalToggle }) => {
   return (
     <Modal
