@@ -1,4 +1,4 @@
-export { SignUpModal } from "./SignUpModal";
-export { LoginModal } from "./LoginModal";
-export { ConfirmationSentModal } from "./ConfirmationSentModal";
-export { EmailActivatedModal } from "./ActivatedModal";
+export { default as SignUpModal } from "./SignUpModal";
+export { default as LoginModal } from "./LoginModal";
+export { default as ConfirmationSentModal } from "./ConfirmationSentModal";
+export { default as EmailActivatedModal } from "./EmailActivatedModal";
