@@ -2,7 +2,6 @@ import React, { FC } from "react";
 import { Modal } from "@/components/Modal";
 import { ConfirmationSentModalProps } from "./types";
 import { SendCheckIcon } from "@/components";
-import Link from "next/link";
 
 const ConfirmationSentModal: FC<ConfirmationSentModalProps> = ({
   confirmationSentModal,

@@ -1,5 +1,5 @@
 import { LoginModal, SignUpModal } from "@/components";
-import { ConfirmationSentModal } from "@/components/LandingPage/Modals";
+import { ConfirmationSentModal } from "@/components/LandingPage/ConfirmationSentModal";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { useLandingPage } from "@/hooks";
 import { NextPageWithLayout } from "./types";
