@@ -1,6 +1,6 @@
 "use client";
 import { LandingPage } from "@/components";
-import EmailActivatedModal from "@/components/Modals/ActivatedModal/EmailActivatedModal";
+import EmailActivatedModal from "@/components/LandingPage/Modals/ActivatedModal/EmailActivatedModal";
 import { useVerifyEmail } from "@/hooks";
 
 const EmailVerifiedPage = () => {
