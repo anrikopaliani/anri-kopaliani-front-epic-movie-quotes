@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Modal } from "@/components";
-import { SignUpForm } from "@/components";
+import SignUpForm from "./SignUpForm";
 import { SignUpModalProps } from "./types";
 
 const SignUpModal: FC<SignUpModalProps> = ({

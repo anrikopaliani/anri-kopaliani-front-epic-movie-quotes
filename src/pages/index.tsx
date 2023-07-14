@@ -1,4 +1,4 @@
-import { LandingPage, LoginModal, SignUpModal } from "@/components";
+import { LoginModal, SignUpModal } from "@/components";
 import { ConfirmationSentModal } from "@/components/LandingPage/Modals";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { useLandingPage } from "@/hooks";
