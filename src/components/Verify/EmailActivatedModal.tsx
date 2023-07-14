@@ -1,10 +1,9 @@
-import { FC } from "react";
 import { Modal, TaskCompleteIcon } from "@/components";
-import { EmailActivatedModalProps } from "./types";
+import useVerifyEmail from "./useVerifyEmail";
 
-const EmailActivatedModal: FC<EmailActivatedModalProps> = ({
-  activatedModal,
-}) => {
+const EmailActivatedModal = () => {
+  const { activatedModal } = useVerifyEmail();
+
   return (
     <Modal isOpen={activatedModal} width="33.625rem" height="23.438rem">
       <div className="mb-9">
