@@ -1,4 +1,4 @@
-import { LoginModal, SignUpModal } from "@/components";
+import { ForgotPasswordModal, LoginModal, SignUpModal } from "@/components";
 import { ConfirmationSentModal } from "@/components/LandingPage/ConfirmationSentModal";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { useLandingPage } from "@/hooks";
@@ -7,7 +7,7 @@ import { ReactElement } from "react";
 import { LandingPageLayout } from "@/components";
 
 const queryClient = new QueryClient();
-const Home: NextPageWithLayout = () => {
+const LandingPage: NextPageWithLayout = () => {
   const {
     signUpModal,
     signUpModalToggle,
@@ -15,6 +15,8 @@ const Home: NextPageWithLayout = () => {
     loginModalToggle,
     VerificationSentToggle,
     confirmationSentModal,
+    forgotPasswordModal,
+    forgotPasswordModalToggle,
   } = useLandingPage();
   return (
     <QueryClientProvider client={queryClient}>
@@ -27,12 +29,16 @@ const Home: NextPageWithLayout = () => {
         confirmationSentModal={confirmationSentModal}
         VerificationSentToggle={VerificationSentToggle}
       />
+      <ForgotPasswordModal
+        forgotPasswordModal={forgotPasswordModal}
+        toggleForgotPasswordModal={forgotPasswordModalToggle}
+      />
     </QueryClientProvider>
   );
 };
 
-Home.getLayout = function getLayout(page: ReactElement) {
+LandingPage.getLayout = function getLayout(page: ReactElement) {
   return <LandingPageLayout>{page}</LandingPageLayout>;
 };
 
-export default Home;
+export default LandingPage;

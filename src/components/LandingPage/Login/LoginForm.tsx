@@ -4,8 +4,14 @@ import useLoginForm from "./useLoginForm";
 import Checkbox from "./Checkbox";
 
 const LoginForm = () => {
-  const { form, errors, onSubmit, handleSubmit, showSignUpModal } =
-    useLoginForm();
+  const {
+    form,
+    errors,
+    onSubmit,
+    handleSubmit,
+    showSignUpModal,
+    showForgotPasswordModal,
+  } = useLoginForm();
   return (
     <FormProvider {...form}>
       <form onSubmit={handleSubmit(onSubmit)} className="w-360 text-white">
@@ -25,7 +31,10 @@ const LoginForm = () => {
 
         <div className="flex justify-between items-center mt-5 mb-4">
           <Checkbox label="Remember me" name="remember_me" />
-          <span className="text-link underline hover:cursor-pointer pl-1">
+          <span
+            onClick={showForgotPasswordModal}
+            className="text-link underline hover:cursor-pointer pl-1"
+          >
             Forgot password
           </span>
         </div>

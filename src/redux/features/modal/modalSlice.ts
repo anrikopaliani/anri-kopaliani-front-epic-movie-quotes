@@ -57,5 +57,6 @@ export const {
   toggleLoginModal,
   toggleConfirmationSentModal,
   toggleActivatedModal,
+  toggleForgotPasswordModal,
 } = modalSlice.actions;
 export const modalReducer = modalSlice.reducer;

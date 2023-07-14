@@ -26,3 +26,7 @@ export const loginFormValidation = Yup.object({
   password: Yup.string().required(),
   remember_me: Yup.boolean().required(),
 });
+
+export const forgotPasswordFormValidation = Yup.object({
+  email: Yup.string().email().required(),
+});

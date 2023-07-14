@@ -3,12 +3,18 @@ import {
   toggleLoginModal,
   toggleSignUpModal,
   toggleConfirmationSentModal,
+  toggleForgotPasswordModal,
 } from "@/redux/features/modal/modalSlice";
 
 const useLandingPage = () => {
   const dispatch = useAppDispatch();
-  const { loginModal, signUpModal, confirmationSentModal, activatedModal } =
-    useAppSelector((state) => state.modal);
+  const {
+    loginModal,
+    signUpModal,
+    confirmationSentModal,
+    activatedModal,
+    forgotPasswordModal,
+  } = useAppSelector((state) => state.modal);
 
   const signUpModalToggle = () => {
     dispatch(toggleSignUpModal());
@@ -22,8 +28,16 @@ const useLandingPage = () => {
     dispatch(toggleConfirmationSentModal());
   };
 
+  const forgotPasswordModalToggle = () => {
+    dispatch(toggleForgotPasswordModal());
+  };
+
   const blurModalBackground =
-    loginModal || signUpModal || confirmationSentModal || activatedModal;
+    loginModal ||
+    signUpModal ||
+    confirmationSentModal ||
+    forgotPasswordModal ||
+    activatedModal;
 
   return {
     loginModal,
@@ -32,7 +46,9 @@ const useLandingPage = () => {
     loginModalToggle,
     confirmationSentModal,
     VerificationSentToggle,
+    forgotPasswordModalToggle,
     blurModalBackground,
+    forgotPasswordModal,
   };
 };
 

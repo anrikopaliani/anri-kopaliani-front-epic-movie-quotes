@@ -3,7 +3,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { loginFormValidation } from "@/schemas";
 import { UserInput } from "./types";
 import { useAppDispatch } from "@/hooks";
-import { toggleSignUpModal } from "@/redux/features";
+import { toggleForgotPasswordModal, toggleSignUpModal } from "@/redux/features";
 import { useMutation } from "react-query";
 import { loginUser } from "@/services";
 
@@ -31,11 +31,22 @@ const useLoginForm = () => {
     dispatch(toggleSignUpModal());
   };
 
+  const showForgotPasswordModal = () => {
+    dispatch(toggleForgotPasswordModal());
+  };
+
   const onSubmit = (data: UserInput) => {
     loginUserMutate(data);
   };
 
-  return { form, handleSubmit, errors, onSubmit, showSignUpModal };
+  return {
+    form,
+    handleSubmit,
+    errors,
+    onSubmit,
+    showSignUpModal,
+    showForgotPasswordModal,
+  };
 };
 
 export default useLoginForm;
