@@ -6,6 +6,7 @@ const initialState: ModalStateTypes = {
   loginModal: false,
   activatedModal: false,
   confirmationSentModal: false,
+  ForgotPasswordModal: false,
 };
 
 export const modalSlice = createSlice({
@@ -17,21 +18,33 @@ export const modalSlice = createSlice({
       state.loginModal = false;
       state.activatedModal = false;
       state.confirmationSentModal = false;
+      state.ForgotPasswordModal = false;
     },
     toggleLoginModal: (state) => {
       state.loginModal = !state.loginModal;
       state.signUpModal = false;
       state.activatedModal = false;
       state.confirmationSentModal = false;
+      state.ForgotPasswordModal = false;
     },
     toggleConfirmationSentModal: (state) => {
       state.confirmationSentModal = !state.confirmationSentModal;
       state.loginModal = false;
       state.signUpModal = false;
       state.activatedModal = false;
+      state.ForgotPasswordModal = false;
     },
     toggleActivatedModal: (state) => {
       state.activatedModal = !state.activatedModal;
+      state.loginModal = false;
+      state.signUpModal = false;
+      state.confirmationSentModal = false;
+      state.ForgotPasswordModal = false;
+    },
+
+    toggleForgotPasswordModal: (state) => {
+      state.ForgotPasswordModal = !state.ForgotPasswordModal;
+      state.activatedModal = false;
       state.loginModal = false;
       state.signUpModal = false;
       state.confirmationSentModal = false;
