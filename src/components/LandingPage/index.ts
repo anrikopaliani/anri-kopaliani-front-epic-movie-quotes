@@ -4,3 +4,4 @@ export * from "./Login";
 export * from "./SignUp";
 export * from "./Navbar";
 export * from "./ForgotPassword";
+export * from "./ResetEmailSentModal";

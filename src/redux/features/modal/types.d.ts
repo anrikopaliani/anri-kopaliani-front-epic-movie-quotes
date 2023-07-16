@@ -4,4 +4,5 @@ export type ModalStateTypes = {
   confirmationSentModal: boolean;
   activatedModal: boolean;
   forgotPasswordModal: boolean;
+  resetPasswordSentModal: boolean;
 };

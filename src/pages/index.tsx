@@ -1,4 +1,9 @@
-import { ForgotPasswordModal, LoginModal, SignUpModal } from "@/components";
+import {
+  ForgotPasswordModal,
+  LoginModal,
+  ResetEmailSentModal,
+  SignUpModal,
+} from "@/components";
 import { ConfirmationSentModal } from "@/components/LandingPage/ConfirmationSentModal";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { useLandingPage } from "@/hooks";
@@ -17,6 +22,8 @@ const LandingPage: NextPageWithLayout = () => {
     confirmationSentModal,
     forgotPasswordModal,
     forgotPasswordModalToggle,
+    resetPasswordSentModal,
+    toggleResetPasswordSendModal,
   } = useLandingPage();
   return (
     <QueryClientProvider client={queryClient}>
@@ -32,6 +39,10 @@ const LandingPage: NextPageWithLayout = () => {
       <ForgotPasswordModal
         forgotPasswordModal={forgotPasswordModal}
         toggleForgotPasswordModal={forgotPasswordModalToggle}
+      />
+      <ResetEmailSentModal
+        resetPasswordSentModal={resetPasswordSentModal}
+        toggleResetPasswordSendModal={toggleResetPasswordSendModal}
       />
     </QueryClientProvider>
   );

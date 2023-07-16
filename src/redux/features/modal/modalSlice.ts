@@ -7,6 +7,7 @@ const initialState: ModalStateTypes = {
   activatedModal: false,
   confirmationSentModal: false,
   forgotPasswordModal: false,
+  resetPasswordSentModal: false,
 };
 
 export const modalSlice = createSlice({
@@ -26,6 +27,7 @@ export const modalSlice = createSlice({
       state.activatedModal = false;
       state.confirmationSentModal = false;
       state.forgotPasswordModal = false;
+      state.resetPasswordSentModal = false;
     },
     toggleConfirmationSentModal: (state) => {
       state.confirmationSentModal = !state.confirmationSentModal;
@@ -33,6 +35,7 @@ export const modalSlice = createSlice({
       state.signUpModal = false;
       state.activatedModal = false;
       state.forgotPasswordModal = false;
+      state.resetPasswordSentModal = false;
     },
     toggleActivatedModal: (state) => {
       state.activatedModal = !state.activatedModal;
@@ -40,10 +43,20 @@ export const modalSlice = createSlice({
       state.signUpModal = false;
       state.confirmationSentModal = false;
       state.forgotPasswordModal = false;
+      state.resetPasswordSentModal = false;
     },
 
     toggleForgotPasswordModal: (state) => {
       state.forgotPasswordModal = !state.forgotPasswordModal;
+      state.activatedModal = false;
+      state.loginModal = false;
+      state.signUpModal = false;
+      state.confirmationSentModal = false;
+      state.resetPasswordSentModal = false;
+    },
+    toggleResetPasswordEmailSent: (state) => {
+      state.resetPasswordSentModal = !state.resetPasswordSentModal;
+      state.forgotPasswordModal = false;
       state.activatedModal = false;
       state.loginModal = false;
       state.signUpModal = false;
@@ -58,5 +71,6 @@ export const {
   toggleConfirmationSentModal,
   toggleActivatedModal,
   toggleForgotPasswordModal,
+  toggleResetPasswordEmailSent,
 } = modalSlice.actions;
 export const modalReducer = modalSlice.reducer;

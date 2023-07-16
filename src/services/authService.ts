@@ -16,3 +16,9 @@ export const loginUser = (data: LoginDataTypes) => {
     axios.post("/api/login", data);
   });
 };
+
+export const forgotPassword = (data: any) => {
+  return axios.get("/sanctum/csrf-cookie").then((response) => {
+    axios.post("/api/forgot-password", data);
+  });
+};

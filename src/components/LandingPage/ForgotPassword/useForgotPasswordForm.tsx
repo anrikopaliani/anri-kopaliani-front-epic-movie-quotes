@@ -1,5 +1,8 @@
 import { useAppDispatch } from "@/hooks";
-import { toggleLoginModal } from "@/redux/features";
+import {
+  toggleLoginModal,
+  toggleResetPasswordEmailSent,
+} from "@/redux/features";
 import { forgotPasswordFormValidation } from "@/schemas";
 import { forgotPassword } from "@/services";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -9,7 +12,9 @@ import { useMutation } from "react-query";
 const useForgotPasswordForm = () => {
   const dispatch = useAppDispatch();
   const { mutate: forgotPasswordMutate } = useMutation(forgotPassword, {
-    onSuccess: () => console.log("hello"),
+    onSuccess: () => {
+      dispatch(toggleResetPasswordEmailSent());
+    },
   });
 
   const form = useForm({
@@ -25,7 +30,7 @@ const useForgotPasswordForm = () => {
     formState: { errors },
   } = form;
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: { email: string }) => {
     forgotPasswordMutate(data);
   };
 
