@@ -1,0 +1,63 @@
+import { FormProvider } from "react-hook-form";
+import { Input, GoogleIcon } from "@/components";
+import useSignUpForm from "./useSignUpForm";
+
+const SignUpForm = () => {
+  const { form, handleSubmit, onSubmit, errors, showLoginModal } =
+    useSignUpForm();
+  return (
+    <FormProvider {...form}>
+      <form className="text-white w-360" onSubmit={handleSubmit(onSubmit)}>
+        <Input
+          label="Name"
+          name="name"
+          placeholder="At least 3 & max.15 lower case characters"
+          error={errors.name?.message}
+        />
+        <Input
+          label="Email"
+          name="email"
+          placeholder="Enter your email"
+          error={errors.email?.message}
+        />
+        <Input
+          type="password"
+          label="Password"
+          name="password"
+          placeholder="At least 8 & max.15 lower case characters"
+          error={errors.password?.message}
+        />
+        <Input
+          type="password"
+          label="Confirm password"
+          name="password_confirmation"
+          placeholder="Confirm password"
+          error={errors.password_confirmation?.message}
+        />
+        <button
+          type="submit"
+          className="mt-9 h-9 rounded bg-red w-full text-center"
+        >
+          Get Started
+        </button>
+        <button
+          type="button"
+          className="w-full  border border-white rounded mt-4 h-9 flex items-center justify-center"
+        >
+          <GoogleIcon /> <span className="pl-2">Sign up with Google</span>
+        </button>
+        <p className="w-full mt-8 text-center">
+          Already have an account?{" "}
+          <span
+            className="underline text-link hover:cursor-pointer"
+            onClick={showLoginModal}
+          >
+            Log in
+          </span>
+        </p>
+      </form>
+    </FormProvider>
+  );
+};
+
+export default SignUpForm;
